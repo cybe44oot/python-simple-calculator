@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        
+        stage('Run Tests') {
+            steps {
+                sh 'python -m pytest tests/'
+            }
+        }
+        
+        stage('Run Application') {
+            steps {
+                sh 'python main.py'
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'Pipeline completed - sending notifications'
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
