@@ -1,6 +1,6 @@
 # main.py
 def add_numbers(a, b):
-    """Add these two numbers together"""
+    """Add two numbers together"""
     return a + b
 
 def subtract_numbers(a, b):
