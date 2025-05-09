@@ -1,4 +1,4 @@
-# 🧮 Python Simple Calculator
+# 🧮 Jenkins-Pipeline-Calculator
 
 A basic command-line calculator written in Python that performs simple arithmetic operations — addition, subtraction, multiplication, and division.
 
